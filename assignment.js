@@ -1,22 +1,29 @@
 // First problem
 
-function feetToMile(feet) {
-    let result = (feet / 5280);
-    return result + ' Miles';
-};
+let feetToMile = (feet) =>{
+    let result = (feet / 5280).toFixed(2);
+    if(typeof(feet) === 'number'){
+        return result + ' ' + "miles";
+    }
+     return "Please input a number";
+} 
+console.log(feetToMile(55000));
 
 
 // Second Problem
 
-function woodCalculator(chair, table, bed) {
-    let total = ((chair * 1) + (table * 3) + (bed * 5));
-    return (total + ' cubic feet of woods');
-};
-
+let woodCalculator = (chair, table, bed) => {
+    if(typeof(chair) === 'number' && typeof(table) === 'number' && typeof(bed) === 'number'){
+        return ((chair * 1) + (table * 3) + (bed * 5)) + ' Cubic feet of woods'
+    }
+    return "Please input a number";
+}
+    
+console.log(woodCalculator(5, 5, 2));
 
 // Third Problem
 
-function brickCalculator(floorNumber){
+let brickCalculator = (floorNumber) => {
     if (floorNumber <=10 && floorNumber >=1){
         let brickNumber = floorNumber * 15000;
         return brickNumber + ' bricks';
@@ -32,7 +39,8 @@ function brickCalculator(floorNumber){
     else {
         return 'Please input a valid floor number!';
     }
-};
+}
+console.log(brickCalculator(21));
 
 // Fourth Problem
 
@@ -45,8 +53,4 @@ function tinyFriend(name) {
         }
     }
     return smallerName;
-};
-
-
-
-
+}
